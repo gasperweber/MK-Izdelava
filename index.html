@@ -160,7 +160,7 @@
     /* ─── HERO ─── */
     #hero {
       min-height: 100vh;
-      padding: 120px 0 80px;
+      padding: 140px 0 100px;
       position: relative;
       display: flex; align-items: center;
       background:
@@ -170,8 +170,8 @@
     }
 
     .hero-inner {
-      max-width: 1140px; margin: 0 auto; padding: 0 24px;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+      max-width: 1240px; margin: 0 auto; padding: 0 24px;
+      display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: center;
     }
 
     .hero-label {
@@ -233,8 +233,8 @@
     .hero-images {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 280px 160px;
-      gap: 10px;
+      grid-template-rows: 380px 210px;
+      gap: 12px;
     }
 
     .hero-img-main {
@@ -383,70 +383,56 @@
     .service-cta-card h3 { color: var(--cyan); }
 
     /* ─── PROJECTS ─── */
-    .proj-tabs {
-      display: flex; gap: 8px; flex-wrap: wrap;
-      margin-bottom: 32px;
-    }
-
-    .proj-tab {
-      padding: 9px 22px;
-      border-radius: 5px;
-      font-size: 0.82rem; font-weight: 700;
-      cursor: pointer;
-      border: 1.5px solid rgba(255,255,255,0.1);
-      color: rgba(255,255,255,0.5);
-      background: transparent;
-      font-family: 'Montserrat', sans-serif;
-      transition: all 0.18s;
-    }
-
-    .proj-tab:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
-    .proj-tab:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
-
-    .proj-tab.active {
-      background: var(--cyan); color: #000;
-      border-color: var(--cyan);
-    }
-
-    .proj-panel { display: none; }
-    .proj-panel.active { display: block; }
-
-    /* ─── HORIZONTAL PHOTO SCROLL ─── */
-    .photo-scroll {
+    .gallery-wrap {
+      position: relative;
       display: flex;
-      gap: 10px;
-      overflow-x: auto;
-      overflow-y: hidden;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      padding-bottom: 10px;
-      margin-bottom: 10px;
-      cursor: grab;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 48px;
     }
 
-    .photo-scroll.grabbing { cursor: grabbing; }
+    .gal-arrow {
+      flex-shrink: 0;
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: var(--surface-2);
+      border: 1.5px solid var(--border);
+      color: #fff;
+      font-size: 1.5rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .gal-arrow:hover { background: var(--cyan); border-color: var(--cyan); color: #000; }
+    .gal-arrow:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
 
-    .photo-scroll::-webkit-scrollbar { height: 3px; }
-    .photo-scroll::-webkit-scrollbar-track { background: var(--surface-2); border-radius: 2px; }
-    .photo-scroll::-webkit-scrollbar-thumb { background: rgba(0,200,232,0.45); border-radius: 2px; }
-    .photo-scroll::-webkit-scrollbar-thumb:hover { background: var(--cyan); }
+    .photo-scroll {
+      flex: 1;
+      display: flex;
+      gap: 6px;
+      height: 460px;
+      overflow: hidden;
+      border-radius: 12px;
+    }
 
     .ps-item {
-      flex: 0 0 auto;
+      flex: 1;
+      min-width: 34px;
       position: relative;
       border-radius: 10px;
       overflow: hidden;
-      background: var(--surface-2);
-      scroll-snap-align: start;
-      height: 480px;
-      transition: box-shadow 0.25s;
+      cursor: pointer;
+      transition: flex 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
-    .ps-item:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.5); }
+    .ps-item:hover, .ps-item.ps-active {
+      flex: 10;
+    }
 
     .ps-item img {
-      height: 100%; width: auto;
-      display: block; object-fit: contain;
+      height: 100%; width: 100%;
+      display: block; object-fit: cover; object-position: center;
       pointer-events: none;
     }
 
@@ -457,19 +443,23 @@
       text-transform: uppercase; z-index: 5;
       pointer-events: none;
     }
-
-    .ba-label-before { left: 12px; background: rgba(0,0,0,0.75); color: rgba(255,255,255,0.9); }
+    .ba-label-before { left: 12px; background: rgba(0,0,0,0.72); color: rgba(255,255,255,0.9); }
     .ba-label-after  { right: 12px; background: var(--cyan); color: #000; }
 
+    .proj-descs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
     .proj-desc {
-      padding: 22px 26px;
+      padding: 20px 22px;
       background: rgba(255,255,255,0.025);
       border: 1px solid var(--border);
       border-radius: 10px;
     }
-
-    .proj-desc h3 { font-size: 1.05rem; margin-bottom: 8px; }
-    .proj-desc p  { font-size: 0.875rem; color: var(--text-muted); line-height: 1.75; }
+    .proj-desc h3 { font-size: 0.95rem; margin-bottom: 6px; }
+    .proj-desc p  { font-size: 0.825rem; color: var(--text-muted); line-height: 1.7; }
 
 
     /* ─── HOW WE WORK ─── */
@@ -694,7 +684,11 @@
 
     @media (max-width: 640px) {
       .services-grid { grid-template-columns: 1fr; }
-      .ps-item { height: 340px; }
+      .photo-scroll { height: 260px; }
+      .ps-item { min-width: 28px; }
+      .proj-descs { grid-template-columns: 1fr; }
+      .gallery-wrap { gap: 8px; }
+      .gal-arrow { width: 32px; height: 32px; font-size: 1.1rem; }
       .stats-inner { grid-template-columns: 1fr 1fr; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
       .cta-actions { flex-direction: column; }
@@ -776,7 +770,7 @@
         <div class="hero-img-main">
           <img src="/brand_assets/Project3/Screenshot 2026-05-03 154627.png" alt="Dokončan bazen - MK Izdelava" loading="lazy">
           <div class="img-overlay"></div>
-          <span class="img-badge">Dokončano</span>
+
         </div>
         <div class="hero-img-small">
           <img src="/brand_assets/Project 4/Screenshot 2026-05-03 154717.png" alt="Moderna kopalnica z marmorjem" loading="lazy">
@@ -883,81 +877,60 @@
         <p class="section-desc">Vsak projekt je resnična zgodba. Tukaj je, kako izgleda prostor, preden in potem, ko mi odidemo.</p>
       </div>
 
-      <div class="proj-tabs" role="tablist" aria-label="Projekti">
-        <button class="proj-tab active" role="tab" aria-selected="true" aria-controls="proj-0" onclick="showProj(0, this)">Projekt 1</button>
-        <button class="proj-tab" role="tab" aria-selected="false" aria-controls="proj-1" onclick="showProj(1, this)">Projekt 2</button>
-        <button class="proj-tab" role="tab" aria-selected="false" aria-controls="proj-2" onclick="showProj(2, this)">Projekt 3</button>
-        <button class="proj-tab" role="tab" aria-selected="false" aria-controls="proj-3" onclick="showProj(3, this)">Projekt 4</button>
-        <button class="proj-tab" role="tab" aria-selected="false" aria-controls="proj-4" onclick="showProj(4, this)">Projekt 5</button>
-      </div>
-
-      <!-- Project 1: Mansarda -->
-      <div class="proj-panel active" id="proj-0" role="tabpanel">
-        <div class="photo-scroll">
-          <div class="ps-item"><img src="/brand_assets/Project 1/Project 1 - Before .png" alt="Pred - lesena mansarda" loading="lazy"><span class="ba-label ba-label-before">Pred</span></div>
-          <div class="ps-item"><img src="/brand_assets/Project 1/Screenshot 2026-05-03 154316.png" alt="Po - gladke bele stene" loading="lazy"><span class="ba-label ba-label-after">Po</span></div>
-        </div>
-        <div class="proj-desc">
-          <h3>Suhomontaža in ometi — Mansarda</h3>
-          <p>Mansarda s starimi lesenimi ploščami — preuredili smo jo v svetel, moderen prostor. Zbrušili stare obloge, namontirali Knauf plošče z izolacijo in zgladili vse do beline.</p>
-        </div>
-      </div>
-
-      <!-- Project 2: Bathroom -->
-      <div class="proj-panel" id="proj-1" role="tabpanel">
-        <div class="photo-scroll">
-          <div class="ps-item"><img src="/brand_assets/Project 2/Screenshot 2026-05-03 154408.png" alt="Pred - stara kopalnica" loading="lazy"><span class="ba-label ba-label-before">Pred</span></div>
-          <div class="ps-item"><img src="/brand_assets/Project 2/Screenshot 2026-05-03 154514.png" alt="Po - moderna kopalnica" loading="lazy"><span class="ba-label ba-label-after">Po</span></div>
+      <!-- Single flat accordion gallery -->
+      <div class="gallery-wrap">
+        <button class="gal-arrow" id="gal-prev" aria-label="Prejšnja">&#8249;</button>
+        <div class="photo-scroll" id="gal-scroll">
+          <!-- Project 1 -->
+          <div class="ps-item"><img src="/brand_assets/Project 1/Project 1 - Before .png" alt="Mansarda — pred" loading="lazy"><span class="ba-label ba-label-before">Pred</span></div>
+          <div class="ps-item"><img src="/brand_assets/Project 1/Screenshot 2026-05-03 154316.png" alt="Mansarda — po" loading="lazy"><span class="ba-label ba-label-after">Potem</span></div>
+          <!-- Project 2 -->
+          <div class="ps-item"><img src="/brand_assets/Project 2/Screenshot 2026-05-03 154408.png" alt="Kopalnica — pred" loading="lazy"><span class="ba-label ba-label-before">Pred</span></div>
+          <div class="ps-item"><img src="/brand_assets/Project 2/Screenshot 2026-05-03 154514.png" alt="Kopalnica — po" loading="lazy"><span class="ba-label ba-label-after">Potem</span></div>
           <div class="ps-item"><img src="/brand_assets/Project 2/Screenshot 2026-05-03 154451.png" alt="Tuš kabina" loading="lazy"></div>
           <div class="ps-item"><img src="/brand_assets/Project 2/Screenshot 2026-05-03 154528.png" alt="Umivalnik" loading="lazy"></div>
           <div class="ps-item"><img src="/brand_assets/Project 2/Screenshot 2026-05-03 154538.png" alt="LED ogledalo" loading="lazy"></div>
-        </div>
-        <div class="proj-desc">
-          <h3>Prenova kopalnice — Keramika, suhomontaža, sanitarije</h3>
-          <p>Stara kopalnica je šla ven, nova pa noter. Rušitev, hidroizolacija, nova keramika, pohištvo in LED ogledalo. Zdaj je kopalnica, ki je človek vesel vsako jutro.</p>
-        </div>
-      </div>
-
-      <!-- Project 3: Pool -->
-      <div class="proj-panel" id="proj-2" role="tabpanel">
-        <div class="photo-scroll">
-          <div class="ps-item"><img src="/brand_assets/Project3/Screenshot 2026-05-03 154558.png" alt="Pred - dotrajani bazen" loading="lazy"><span class="ba-label ba-label-before">Pred</span></div>
-          <div class="ps-item"><img src="/brand_assets/Project3/Screenshot 2026-05-03 154614.png" alt="Med prenovo" loading="lazy"></div>
-          <div class="ps-item"><img src="/brand_assets/Project3/Screenshot 2026-05-03 154622.png" alt="Polaganje mozaika" loading="lazy"></div>
-          <div class="ps-item"><img src="/brand_assets/Project3/Screenshot 2026-05-03 154627.png" alt="Dokončan bazen" loading="lazy"><span class="ba-label ba-label-after">Po</span></div>
-        </div>
-        <div class="proj-desc">
-          <h3>Prenova bazena — Mozaik keramika, hidroizolacija, les</h3>
-          <p>Bazen je bil v slabem stanju — danes zgleda kot iz hotela. Sanirali smo školjko, položili mozaik keramiko in obdali z leseno teraso. Stranka je bila prijetno presenečena.</p>
-        </div>
-      </div>
-
-      <!-- Project 4: Marble bathroom -->
-      <div class="proj-panel" id="proj-3" role="tabpanel">
-        <div class="photo-scroll">
-          <div class="ps-item"><img src="/brand_assets/Project 4/Screenshot 2026-05-03 154648.png" alt="Pred - surova kopalnica" loading="lazy"><span class="ba-label ba-label-before">Pred</span></div>
-          <div class="ps-item"><img src="/brand_assets/Project 4/Screenshot 2026-05-03 154717.png" alt="Po - marmorna kopalnica" loading="lazy"><span class="ba-label ba-label-after">Po</span></div>
-          <div class="ps-item"><img src="/brand_assets/Project 4/Screenshot 2026-05-03 154653.png" alt="Detajl 1" loading="lazy"></div>
-          <div class="ps-item"><img src="/brand_assets/Project 4/Screenshot 2026-05-03 154701.png" alt="Detajl 2" loading="lazy"></div>
-          <div class="ps-item"><img src="/brand_assets/Project 4/Screenshot 2026-05-03 154709.png" alt="Detajl 3" loading="lazy"></div>
-        </div>
-        <div class="proj-desc">
-          <h3>Nova kopalnica z marmorjem — Od betona do finega zaključka</h3>
-          <p>Gradnja od betonske plošče do gotove kopalnice. Izravnava, hidroizolacija, velikoformatne marmorne ploščice in vsa sanitarna oprema. Minimalistično, brez da bi zdrselo v banalnost.</p>
-        </div>
-      </div>
-
-      <!-- Project 5: Interior ceiling -->
-      <div class="proj-panel" id="proj-4" role="tabpanel">
-        <div class="photo-scroll">
-          <div class="ps-item"><img src="/brand_assets/Project 5/Screenshot 2026-05-03 154948.png" alt="Pred - surovo ostrešje" loading="lazy"><span class="ba-label ba-label-before">Pred</span></div>
-          <div class="ps-item"><img src="/brand_assets/Project 5/Screenshot 2026-05-03 155008.png" alt="Po - gladek strop z lučmi" loading="lazy"><span class="ba-label ba-label-after">Po</span></div>
+          <!-- Project 3 -->
+          <div class="ps-item"><img src="/brand_assets/Project3/Screenshot 2026-05-03 154558.png" alt="Bazen — pred" loading="lazy"><span class="ba-label ba-label-before">Pred</span></div>
+          <div class="ps-item"><img src="/brand_assets/Project3/Screenshot 2026-05-03 154614.png" alt="Bazen — med prenovo" loading="lazy"></div>
+          <div class="ps-item"><img src="/brand_assets/Project3/Screenshot 2026-05-03 154622.png" alt="Mozaik keramika" loading="lazy"></div>
+          <div class="ps-item"><img src="/brand_assets/Project3/Screenshot 2026-05-03 154627.png" alt="Bazen — po" loading="lazy"><span class="ba-label ba-label-after">Potem</span></div>
+          <!-- Project 4 -->
+          <div class="ps-item"><img src="/brand_assets/Project 4/Screenshot 2026-05-03 154648.png" alt="Marmor — pred" loading="lazy"><span class="ba-label ba-label-before">Pred</span></div>
+          <div class="ps-item"><img src="/brand_assets/Project 4/Screenshot 2026-05-03 154717.png" alt="Marmor — po" loading="lazy"><span class="ba-label ba-label-after">Potem</span></div>
+          <div class="ps-item"><img src="/brand_assets/Project 4/Screenshot 2026-05-03 154653.png" alt="Detajl kopalnice" loading="lazy"></div>
+          <div class="ps-item"><img src="/brand_assets/Project 4/Screenshot 2026-05-03 154701.png" alt="Detajl kopalnice 2" loading="lazy"></div>
+          <div class="ps-item"><img src="/brand_assets/Project 4/Screenshot 2026-05-03 154709.png" alt="Detajl kopalnice 3" loading="lazy"></div>
+          <!-- Project 5 -->
+          <div class="ps-item"><img src="/brand_assets/Project 5/Screenshot 2026-05-03 154948.png" alt="Strop — pred" loading="lazy"><span class="ba-label ba-label-before">Pred</span></div>
+          <div class="ps-item"><img src="/brand_assets/Project 5/Screenshot 2026-05-03 155008.png" alt="Strop — po" loading="lazy"><span class="ba-label ba-label-after">Potem</span></div>
           <div class="ps-item"><img src="/brand_assets/Project 5/Screenshot 2026-05-03 154953.png" alt="Med izvedbo" loading="lazy"></div>
-          <div class="ps-item"><img src="/brand_assets/Project 5/Screenshot 2026-05-03 154957.png" alt="Zaključen prostor" loading="lazy"></div>
+          <div class="ps-item"><img src="/brand_assets/Project 5/Screenshot 2026-05-03 154957.png" alt="Zaključen strop" loading="lazy"></div>
+        </div>
+        <button class="gal-arrow" id="gal-next" aria-label="Naslednja">&#8250;</button>
+      </div>
+
+      <!-- Project descriptions grid -->
+      <div class="proj-descs">
+        <div class="proj-desc">
+          <h3>Mansarda — Suhomontaža in ometi</h3>
+          <p>Lesene plošče ven, Knauf plošče z izolacijo noter. Zgladili smo vse do beline.</p>
         </div>
         <div class="proj-desc">
-          <h3>Spuščeni strop in suhomontaža — Novogradnja</h3>
-          <p>Novogradnja je imela grob omet in vidne špirovce. Naredili smo spuščen strop z vgrajenimi lučmi, zgladili stene in predali prostor, ki je bil nared za pohištvo.</p>
+          <h3>Kopalnica — Keramika in sanitarije</h3>
+          <p>Rušitev, hidroizolacija, nova keramika, pohištvo in LED ogledalo. Od začetka do konca.</p>
+        </div>
+        <div class="proj-desc">
+          <h3>Bazen — Mozaik in lesena terasa</h3>
+          <p>Sanacija školjke, mozaik keramika in lesena terasa. Danes zgleda kot iz hotela.</p>
+        </div>
+        <div class="proj-desc">
+          <h3>Kopalnica z marmorjem</h3>
+          <p>Velikoformatne marmorne ploščice od tal do stropa. Minimalistično in trajno.</p>
+        </div>
+        <div class="proj-desc">
+          <h3>Spuščeni strop — Novogradnja</h3>
+          <p>Spuščen strop z vgrajenimi lučmi, zglajene stene. Prostor nared za pohištvo.</p>
         </div>
       </div>
     </div>
@@ -1187,14 +1160,27 @@
   </footer>
 
   <script>
-    // Project tab switcher
-    function showProj(i, btn) {
-      document.querySelectorAll('.proj-panel').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.proj-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
-      document.getElementById('proj-' + i).classList.add('active');
-      btn.classList.add('active');
-      btn.setAttribute('aria-selected', 'true');
-    }
+    // Gallery accordion navigation
+    const galItems = Array.from(document.querySelectorAll('#gal-scroll .ps-item'));
+    let galActive = Math.floor(galItems.length / 2);
+    galItems[galActive].classList.add('ps-active');
+    document.getElementById('gal-prev').addEventListener('click', () => {
+      galItems[galActive].classList.remove('ps-active');
+      galActive = (galActive - 1 + galItems.length) % galItems.length;
+      galItems[galActive].classList.add('ps-active');
+    });
+    document.getElementById('gal-next').addEventListener('click', () => {
+      galItems[galActive].classList.remove('ps-active');
+      galActive = (galActive + 1) % galItems.length;
+      galItems[galActive].classList.add('ps-active');
+    });
+    galItems.forEach((item, i) => {
+      item.addEventListener('click', () => {
+        galItems[galActive].classList.remove('ps-active');
+        galActive = i;
+        galItems[galActive].classList.add('ps-active');
+      });
+    });
 
     // Mobile nav
     const hamburger = document.getElementById('hamburger-btn');
@@ -1260,24 +1246,6 @@
         : 'rgba(8,11,13,0.82)';
     }, { passive: true });
 
-    // Drag-to-scroll for photo carousels
-    document.querySelectorAll('.photo-scroll').forEach(el => {
-      let isDown = false, startX = 0, scrollLeft = 0;
-      el.addEventListener('mousedown', e => {
-        isDown = true;
-        el.classList.add('grabbing');
-        startX = e.pageX - el.offsetLeft;
-        scrollLeft = el.scrollLeft;
-        e.preventDefault();
-      });
-      el.addEventListener('mouseleave', () => { isDown = false; el.classList.remove('grabbing'); });
-      el.addEventListener('mouseup', () => { isDown = false; el.classList.remove('grabbing'); });
-      el.addEventListener('mousemove', e => {
-        if (!isDown) return;
-        const x = e.pageX - el.offsetLeft;
-        el.scrollLeft = scrollLeft - (x - startX) * 1.4;
-      });
-    });
 
   </script>
 </body>
