@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MK Izdelava | Zaključna Dela v Gradbeništvu | Matic Košir s.p.</title>
+  <meta name="description" content="Profesionalna zaključna dela v gradbeništvu po vsej Sloveniji. Suhomontaža, spuščeni stropi, slikopleskarstvo, keramika in talne obloge. Pokličite za brezplačen ogled: +386 40 874 388">
+  <meta name="keywords" content="zaključna gradbena dela, suhomontaža, slikopleskarstvo, keramika, spuščeni stropi, talne obloge, gradbeništvo Slovenija, prenova kopalnice, Matic Košir">
+  <meta name="author" content="MK Izdelava, Matic Košir s.p.">
+  <meta name="robots" content="index, follow">
+  <meta name="geo.region" content="SI">
+  <meta name="geo.country" content="Slovenia">
+  <link rel="canonical" href="https://mkizdelava.si/">
+
+  <meta property="og:title" content="MK Izdelava | Zaključna Dela v Gradbeništvu">
+  <meta property="og:description" content="Profesionalna zaključna dela v gradbeništvu po vsej Sloveniji. Suhomontaža, keramika, slikopleskarstvo in več.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sl_SI">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "MK Izdelava",
+    "alternateName": "Matic Košir s.p.",
+    "description": "Zaključna dela v gradbeništvu - suhomontaža, spuščeni stropi, slikopleskarstvo, keramika, talne obloge",
+    "telephone": "+38640874388",
+    "priceRange": "$$",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Slovenia"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Zaključna gradbena dela",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Suhomontažna dela"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Spuščeni stropi"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Slikopleskarstvo"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Keramika"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Polaganje talnih oblog"}}
+      ]
+    }
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cyan: #00C8E8;
+      --cyan-dim: rgba(0,200,232,0.12);
+      --dark: #080B0D;
+      --surface: #0F1316;
+      --surface-2: #181C1F;
+      --border: rgba(255,255,255,0.07);
+      --text-muted: rgba(255,255,255,0.5);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--dark);
+      color: #EAEAEA;
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Grain overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* ─── TYPOGRAPHY ─── */
+    .font-display { font-family: 'Montserrat', sans-serif; }
+
+    h1, h2, h3 { font-family: 'Montserrat', sans-serif; line-height: 1.1; }
+
+    /* ─── NAV ─── */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(8,11,13,0.82);
+      backdrop-filter: blur(24px) saturate(1.4);
+      -webkit-backdrop-filter: blur(24px) saturate(1.4);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s;
+    }
+
+    .nav-inner {
+      max-width: 1140px; margin: 0 auto;
+      padding: 0 24px;
+      height: 76px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .nav-logo { display: flex; align-items: center; }
+    .nav-logo img { height: 58px; width: auto; mix-blend-mode: screen; }
+    .footer-logo img { mix-blend-mode: screen; }
+
+    .nav-links { display: flex; align-items: center; gap: 36px; }
+    .nav-links a {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.875rem; font-weight: 500;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a:focus-visible { color: #fff; outline: none; }
+
+    .nav-phone {
+      display: flex; align-items: center; gap: 8px;
+      color: var(--cyan); font-weight: 700; font-size: 0.9rem;
+      text-decoration: none; font-family: 'Montserrat', sans-serif;
+      transition: opacity 0.2s;
+    }
+    .nav-phone:hover { opacity: 0.8; }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: 'Montserrat', sans-serif; font-weight: 700;
+      border-radius: 5px; cursor: pointer; text-decoration: none;
+      border: none; transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1),
+                                  box-shadow 0.18s ease, opacity 0.18s;
+    }
+    .btn:active { transform: scale(0.97); }
+
+    .btn-primary {
+      background: var(--cyan); color: #000;
+      padding: 15px 32px; font-size: 0.9rem;
+      box-shadow: 0 4px 24px rgba(0,200,232,0.28), 0 1px 6px rgba(0,200,232,0.2);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 36px rgba(0,200,232,0.42), 0 3px 10px rgba(0,200,232,0.25);
+    }
+    .btn-primary:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+
+    .btn-ghost {
+      background: transparent; color: #fff;
+      padding: 14px 32px; font-size: 0.9rem;
+      border: 1.5px solid rgba(255,255,255,0.18);
+    }
+    .btn-ghost:hover {
+      border-color: rgba(255,255,255,0.45);
+      background: rgba(255,255,255,0.04);
+    }
+    .btn-ghost:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+
+    .btn-sm { padding: 11px 22px; font-size: 0.82rem; }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      padding: 120px 0 80px;
+      position: relative;
+      display: flex; align-items: center;
+      background:
+        radial-gradient(ellipse 90% 60% at 65% 35%, rgba(0,200,232,0.07) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 40% at 10% 90%, rgba(0,80,100,0.05) 0%, transparent 55%),
+        var(--dark);
+    }
+
+    .hero-inner {
+      max-width: 1140px; margin: 0 auto; padding: 0 24px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+
+    .hero-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--cyan); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero-label::before {
+      content: '';
+      display: block; width: 20px; height: 1.5px;
+      background: var(--cyan);
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 5vw, 4.4rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+      color: #fff;
+    }
+
+    h1 span { color: var(--cyan); }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      max-width: 480px;
+      margin-bottom: 36px;
+    }
+
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
+
+    .hero-tel {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 20px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+      width: fit-content;
+    }
+    .hero-tel:hover { border-color: rgba(0,200,232,0.35); background: rgba(0,200,232,0.04); }
+
+    .hero-tel-icon {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(0,200,232,0.12);
+      border: 1px solid rgba(0,200,232,0.25);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .hero-tel-label { font-size: 0.68rem; color: rgba(255,255,255,0.35); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+    .hero-tel-num { font-size: 1.15rem; font-weight: 800; color: var(--cyan); font-family: 'Montserrat', sans-serif; }
+
+    /* Hero image grid */
+    .hero-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 280px 160px;
+      gap: 10px;
+    }
+
+    .hero-img-main {
+      grid-column: 1 / -1;
+      border-radius: 10px; overflow: hidden; position: relative;
+    }
+
+    .hero-img-small { border-radius: 10px; overflow: hidden; position: relative; }
+
+    .hero-img-main img,
+    .hero-img-small img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .hero-img-main:hover img,
+    .hero-img-small:hover img { transform: scale(1.04); }
+
+    .img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 55%);
+    }
+
+    .img-badge {
+      position: absolute; bottom: 12px; left: 12px;
+      background: rgba(0,200,232,0.9); color: #000;
+      font-size: 0.65rem; font-weight: 800; letter-spacing: 0.12em;
+      text-transform: uppercase; padding: 4px 10px; border-radius: 3px;
+    }
+
+    /* ─── STATS BAR ─── */
+    #stats {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stats-inner {
+      max-width: 1140px; margin: 0 auto; padding: 0 24px;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat-item {
+      padding: 36px 20px; text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .stat-item:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.6rem; font-weight: 900;
+      color: var(--cyan); line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.8rem; color: var(--text-muted);
+      margin-top: 6px; font-weight: 500;
+    }
+
+    /* ─── SECTION HELPERS ─── */
+    .section { padding: 96px 0; }
+    .section-alt { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+    .section-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--cyan); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .section-tag::before {
+      content: ''; display: block;
+      width: 18px; height: 1.5px; background: var(--cyan);
+    }
+
+    h2 {
+      font-size: clamp(1.9rem, 3.5vw, 2.9rem);
+      font-weight: 900; letter-spacing: -0.025em; color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      font-size: 1rem; color: var(--text-muted);
+      line-height: 1.75; max-width: 500px;
+    }
+
+    .section-head { margin-bottom: 56px; }
+    .section-head-center { text-align: center; }
+    .section-head-center .section-desc { margin: 0 auto; }
+
+    /* ─── SERVICES ─── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .service-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 32px 28px;
+      position: relative; overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s;
+    }
+
+    .service-card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent 0%, var(--cyan) 50%, transparent 100%);
+      opacity: 0; transition: opacity 0.25s;
+    }
+
+    .service-card:hover {
+      border-color: rgba(0,200,232,0.28);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.45), 0 0 0 1px rgba(0,200,232,0.1);
+    }
+
+    .service-card:hover::before { opacity: 1; }
+
+    .service-icon {
+      width: 50px; height: 50px; border-radius: 10px;
+      background: var(--cyan-dim);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 1.1rem; font-weight: 800; margin-bottom: 10px;
+      letter-spacing: -0.01em; color: #fff;
+    }
+
+    .service-card p {
+      font-size: 0.875rem; color: var(--text-muted); line-height: 1.7;
+    }
+
+    .service-cta-card {
+      background: rgba(0,200,232,0.05);
+      border-color: rgba(0,200,232,0.2);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+    }
+
+    .service-cta-card h3 { color: var(--cyan); }
+
+    /* ─── PROJECTS ─── */
+    .proj-tabs {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .proj-tab {
+      padding: 9px 22px;
+      border-radius: 5px;
+      font-size: 0.82rem; font-weight: 700;
+      cursor: pointer;
+      border: 1.5px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.5);
+      background: transparent;
+      font-family: 'Montserrat', sans-serif;
+      transition: all 0.18s;
+    }
+
+    .proj-tab:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+    .proj-tab:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+
+    .proj-tab.active {
+      background: var(--cyan); color: #000;
+      border-color: var(--cyan);
+    }
+
+    .proj-panel { display: none; }
+    .proj-panel.active { display: block; }
+
+    /* ─── HORIZONTAL PHOTO SCROLL ─── */
+    .photo-scroll {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      cursor: grab;
+    }
+
+    .photo-scroll.grabbing { cursor: grabbing; }
+
+    .photo-scroll::-webkit-scrollbar { height: 3px; }
+    .photo-scroll::-webkit-scrollbar-track { background: var(--surface-2); border-radius: 2px; }
+    .photo-scroll::-webkit-scrollbar-thumb { background: rgba(0,200,232,0.45); border-radius: 2px; }
+    .photo-scroll::-webkit-scrollbar-thumb:hover { background: var(--cyan); }
+
+    .ps-item {
+      flex: 0 0 auto;
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--surface-2);
+      scroll-snap-align: start;
+      height: 480px;
+      transition: box-shadow 0.25s;
+    }
+
+    .ps-item:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.5); }
+
+    .ps-item img {
+      height: 100%; width: auto;
+      display: block; object-fit: contain;
+      pointer-events: none;
+    }
+
+    .ba-label {
+      position: absolute; top: 12px;
+      padding: 4px 12px; border-radius: 4px;
+      font-size: 0.65rem; font-weight: 800; letter-spacing: 0.12em;
+      text-transform: uppercase; z-index: 5;
+      pointer-events: none;
+    }
+
+    .ba-label-before { left: 12px; background: rgba(0,0,0,0.75); color: rgba(255,255,255,0.9); }
+    .ba-label-after  { right: 12px; background: var(--cyan); color: #000; }
+
+    .proj-desc {
+      padding: 22px 26px;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .proj-desc h3 { font-size: 1.05rem; margin-bottom: 8px; }
+    .proj-desc p  { font-size: 0.875rem; color: var(--text-muted); line-height: 1.75; }
+
+
+    /* ─── HOW WE WORK ─── */
+    .steps { display: flex; flex-direction: column; gap: 28px; }
+
+    .step {
+      display: flex; gap: 20px; align-items: flex-start;
+    }
+
+    .step-num {
+      width: 50px; height: 50px; border-radius: 50%; flex-shrink: 0;
+      background: rgba(0,200,232,0.08);
+      border: 2px solid rgba(0,200,232,0.28);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Montserrat', sans-serif; font-weight: 900;
+      font-size: 1.05rem; color: var(--cyan);
+    }
+
+    .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; color: #fff; }
+    .step p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* Trust cards */
+    .trust-cards { display: flex; flex-direction: column; gap: 14px; }
+
+    .trust-card {
+      display: flex; gap: 18px; align-items: flex-start;
+      padding: 22px 24px;
+      background: rgba(0,200,232,0.04);
+      border: 1px solid rgba(0,200,232,0.14);
+      border-radius: 10px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .trust-card:hover {
+      border-color: rgba(0,200,232,0.28);
+      background: rgba(0,200,232,0.07);
+    }
+
+    .trust-icon {
+      width: 44px; height: 44px; border-radius: 8px; flex-shrink: 0;
+      background: rgba(0,200,232,0.12);
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .trust-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 5px; color: #fff; }
+    .trust-card p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.65; }
+
+    /* ─── CTA ─── */
+    #cta {
+      padding: 100px 0;
+      background:
+        radial-gradient(ellipse 80% 70% at 50% 50%, rgba(0,200,232,0.09) 0%, transparent 70%),
+        var(--surface);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    #cta h2 { margin-bottom: 20px; }
+    #cta p { font-size: 1.05rem; color: var(--text-muted); max-width: 480px; margin: 0 auto 40px; line-height: 1.75; }
+
+    .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+
+    .cta-note { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--surface); border-top: 1px solid var(--border); padding: 96px 0; }
+
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
+    }
+
+    .contact-info { display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px; }
+
+    .contact-row {
+      display: flex; align-items: center; gap: 16px;
+    }
+
+    .contact-icon {
+      width: 48px; height: 48px; border-radius: 10px; flex-shrink: 0;
+      background: rgba(0,200,232,0.08);
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .contact-row-label { font-size: 0.68rem; color: rgba(255,255,255,0.35); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; margin-bottom: 3px; }
+    .contact-row-val { font-size: 1.05rem; font-weight: 700; color: #fff; }
+    .contact-row-val a { color: var(--cyan); text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 1.2rem; }
+    .contact-row-val a:hover { opacity: 0.8; }
+
+    .company-badge {
+      padding: 18px 22px;
+      background: rgba(0,200,232,0.04);
+      border: 1px solid rgba(0,200,232,0.15);
+      border-radius: 8px;
+      font-size: 0.875rem; color: var(--text-muted); line-height: 1.7;
+    }
+
+    .company-badge strong { color: var(--cyan); }
+
+    /* Form */
+    .form-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 36px;
+    }
+
+    .form-card h3 { font-size: 1.2rem; margin-bottom: 28px; color: #fff; }
+
+    .form-group { margin-bottom: 18px; }
+
+    .form-label {
+      display: block; font-size: 0.72rem; font-weight: 700;
+      color: rgba(255,255,255,0.4); letter-spacing: 0.07em;
+      text-transform: uppercase; margin-bottom: 8px;
+    }
+
+    .form-control {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 6px;
+      padding: 13px 16px;
+      color: #fff;
+      font-family: 'Inter', sans-serif; font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .form-control:focus {
+      border-color: rgba(0,200,232,0.5);
+      background: rgba(0,200,232,0.04);
+    }
+
+    .form-control::placeholder { color: rgba(255,255,255,0.22); }
+
+    select.form-control { cursor: pointer; }
+    select.form-control option { background: #1a1f23; }
+
+    textarea.form-control { resize: vertical; min-height: 110px; }
+
+    .form-submit {
+      width: 100%; padding: 15px;
+      margin-top: 8px;
+    }
+
+    .form-note {
+      text-align: center; font-size: 0.75rem;
+      color: rgba(255,255,255,0.22); margin-top: 12px;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+    }
+
+    .footer-inner {
+      max-width: 1140px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    }
+
+    .footer-logo { display: flex; align-items: center; gap: 14px; }
+    .footer-logo img { height: 32px; width: auto; }
+    .footer-sep { width: 1px; height: 22px; background: var(--border); }
+    .footer-name { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      font-size: 0.8rem; color: rgba(255,255,255,0.35);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+
+    .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
+
+    /* ─── SCROLL ANIMATIONS ─── */
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ─── MOBILE NAV ─── */
+    .hamburger {
+      display: none; background: none; border: none; cursor: pointer;
+      padding: 8px; color: #fff;
+    }
+
+    #mobile-nav {
+      display: none;
+      position: fixed; inset: 0; top: 68px; z-index: 199;
+      background: rgba(8,11,13,0.97);
+      padding: 32px 24px;
+      flex-direction: column; gap: 28px;
+    }
+
+    #mobile-nav.open { display: flex; }
+    #mobile-nav a {
+      color: rgba(255,255,255,0.75); font-size: 1.3rem; font-weight: 700;
+      font-family: 'Montserrat', sans-serif; text-decoration: none;
+      transition: color 0.2s;
+    }
+    #mobile-nav a:hover { color: var(--cyan); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-images { display: none; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .nav-links, .nav-phone { display: none; }
+      .hamburger { display: block; }
+      #hero { padding-top: 100px; }
+    }
+
+    @media (max-width: 640px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .ps-item { height: 340px; }
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .cta-actions { flex-direction: column; }
+      .cta-actions .btn { width: 100%; }
+      h1 { font-size: 2.1rem; }
+      h2 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="MK Izdelava - Domov">
+        <img src="/brand_assets/Logo.png" alt="MK Izdelava logo">
+      </a>
+
+      <div class="nav-links">
+        <a href="#storitve">Storitve</a>
+        <a href="#projekti">Projekti</a>
+        <a href="#o-nas">O nas</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+
+      <a href="tel:+38640874388" class="nav-phone" aria-label="Pokliči nas">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-1.28a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        +386 40 874 388
+      </a>
+
+      <button class="hamburger" id="hamburger-btn" aria-label="Meni" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAV -->
+  <div id="mobile-nav" role="navigation" aria-label="Mobilni meni">
+    <a href="#storitve" onclick="closeMobileNav()">Storitve</a>
+    <a href="#projekti" onclick="closeMobileNav()">Projekti</a>
+    <a href="#o-nas" onclick="closeMobileNav()">O nas</a>
+    <a href="#kontakt" onclick="closeMobileNav()">Kontakt</a>
+    <a href="tel:+38640874388" style="color:var(--cyan);">+386 40 874 388</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero" aria-labelledby="hero-title">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-label" aria-hidden="true">Zaključna gradbena dela · Slovenija</div>
+
+        <h1 id="hero-title">
+          Vaš prostor,<br>
+          <span>naša strast.</span>
+        </h1>
+
+        <p class="hero-desc">
+          Delamo tisto, kar se vidi. Od suhomontaže in stropov do keramike in talnih oblog — vse zaključno delo z ekipo, ki ve, kaj dela.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#kontakt" class="btn btn-primary">Pridobite brezplačno ponudbo</a>
+          <a href="#projekti" class="btn btn-ghost">Oglejte si projekte</a>
+        </div>
+
+        <a href="tel:+38640874388" class="hero-tel" aria-label="Pokliči +386 40 874 388">
+          <div class="hero-tel-icon" aria-hidden="true">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#00C8E8" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-1.28a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="hero-tel-label">Pokličite kadarkoli</div>
+            <div class="hero-tel-num">+386 40 874 388</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Hero image collage -->
+      <div class="hero-images" aria-hidden="true">
+        <div class="hero-img-main">
+          <img src="/brand_assets/Project3/Screenshot 2026-05-03 154627.png" alt="Dokončan bazen - MK Izdelava" loading="lazy">
+          <div class="img-overlay"></div>
+          <span class="img-badge">Dokončano</span>
+        </div>
+        <div class="hero-img-small">
+          <img src="/brand_assets/Project 4/Screenshot 2026-05-03 154717.png" alt="Moderna kopalnica z marmorjem" loading="lazy">
+          <div class="img-overlay"></div>
+        </div>
+        <div class="hero-img-small">
+          <img src="/brand_assets/Project 2/Screenshot 2026-05-03 154514.png" alt="Moderna kopalnica z lesom" loading="lazy">
+          <div class="img-overlay"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div id="stats" role="region" aria-label="Statistike">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">Opravljenih projektov</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Let v obratu</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Strank, ki se vrne</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">0 €</div>
+        <div class="stat-label">Brezplačen ogled</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="storitve" class="section" aria-labelledby="services-title">
+    <div class="container">
+      <div class="section-head section-head-center reveal">
+        <div class="section-tag" aria-hidden="true">Naše storitve</div>
+        <h2 id="services-title">Kar koli potrebujete, naredimo</h2>
+        <p class="section-desc">Vse zaključno gradbeniško delo na enem mestu. Ena ekipa, en dogovor, brez skrbi.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00C8E8" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+          </div>
+          <h3>Suhomontažna dela</h3>
+          <p>Knauf, Rigips, predelne stene, obloge. Delamo hitro in natančno — brez prahu v vaši dnevni sobi dlje, kot je res potrebno.</p>
+        </div>
+
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00C8E8" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Spuščeni stropi</h3>
+          <p>Čist videz, skrite instalacije, vgrajena svetloba. Strop, ki deluje in zgleda dobro — brez vidnih kablov in odprtin.</p>
+        </div>
+
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00C8E8" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
+          <h3>Slikopleskarstvo</h3>
+          <p>Gladke stene, brez sledi, brez prask. Prepleskamo, zgladimo in naredimo, da se počutite kot v novem domu.</p>
+        </div>
+
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00C8E8" stroke-width="1.8"><rect x="2" y="2" width="9" height="9" rx="1.5"/><rect x="13" y="2" width="9" height="9" rx="1.5"/><rect x="2" y="13" width="9" height="9" rx="1.5"/><rect x="13" y="13" width="9" height="9" rx="1.5"/></svg>
+          </div>
+          <h3>Keramika</h3>
+          <p>Ploščice v kopalnici, kuhinji ali na terasi. Fugiramo precizno in zagotovimo vodotesnost — da pozabite na skrbi z vlago.</p>
+        </div>
+
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00C8E8" stroke-width="1.8"><path d="M2 20h20"/><path d="M5 20V8l7-5 7 5v12"/><path d="M9 20v-5h6v5"/></svg>
+          </div>
+          <h3>Talne obloge</h3>
+          <p>Parket, laminat, vinil — polagamo vse. Preden začnemo, preverimo podlago. Ker dober pod začne spodaj.</p>
+        </div>
+
+        <div class="service-card service-cta-card reveal reveal-delay-3">
+          <div class="service-icon" style="background:rgba(0,200,232,0.15);border-radius:50%;width:52px;height:52px;" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00C8E8" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-1.28a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <h3>Brezplačen ogled</h3>
+          <p style="font-size:0.875rem;color:var(--text-muted);line-height:1.7;margin-bottom:22px;">Niste prepričani, kje začeti? Pokličite — pridemo pogledati brezplačno in vam povemo, kaj ima smisel narediti.</p>
+          <a href="tel:+38640874388" class="btn btn-primary btn-sm" style="width:100%;text-align:center;">Pokličite zdaj</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projekti" class="section section-alt" aria-labelledby="projects-title">
+    <div class="container">
+      <div class="section-head section-head-center reveal">
+        <div class="section-tag" aria-hidden="true">Naši projekti</div>
+        <h2 id="projects-title">Oglejte si, kaj naredimo</h2>
+        <p class="section-desc">Vsak projekt je resnična zgodba. Tukaj je, kako izgleda prostor, preden in potem, ko mi odidemo.</p>
+      </div>
+
+      <div class="proj-tabs" role="tablist" aria-label="Projekti">
+        <button class="proj-tab active" role="tab" aria-selected="true" aria-controls="proj-0" onclick="showProj(0, this)">Projekt 1</button>
+        <button class="proj-tab" role="tab" aria-selected="false" aria-controls="proj-1" onclick="showProj(1, this)">Projekt 2</button>
+        <button class="proj-tab" role="tab" aria-selected="false" aria-controls="proj-2" onclick="showProj(2, this)">Projekt 3</button>
+        <button class="proj-tab" role="tab" aria-selected="false" aria-controls="proj-3" onclick="showProj(3, this)">Projekt 4</button>
+        <button class="proj-tab" role="tab" aria-selected="false" aria-controls="proj-4" onclick="showProj(4, this)">Projekt 5</button>
+      </div>
+
+      <!-- Project 1: Mansarda -->
+      <div class="proj-panel active" id="proj-0" role="tabpanel">
+        <div class="photo-scroll">
+          <div class="ps-item"><img src="/brand_assets/Project 1/Project 1 - Before .png" alt="Pred - lesena mansarda" loading="lazy"><span class="ba-label ba-label-before">Pred</span></div>
+          <div class="ps-item"><img src="/brand_assets/Project 1/Screenshot 2026-05-03 154316.png" alt="Po - gladke bele stene" loading="lazy"><span class="ba-label ba-label-after">Po</span></div>
+        </div>
+        <div class="proj-desc">
+          <h3>Suhomontaža in ometi — Mansarda</h3>
+          <p>Mansarda s starimi lesenimi ploščami — preuredili smo jo v svetel, moderen prostor. Zbrušili stare obloge, namontirali Knauf plošče z izolacijo in zgladili vse do beline.</p>
+        </div>
+      </div>
+
+      <!-- Project 2: Bathroom -->
+      <div class="proj-panel" id="proj-1" role="tabpanel">
+        <div class="photo-scroll">
+          <div class="ps-item"><img src="/brand_assets/Project 2/Screenshot 2026-05-03 154408.png" alt="Pred - stara kopalnica" loading="lazy"><span class="ba-label ba-label-before">Pred</span></div>
+          <div class="ps-item"><img src="/brand_assets/Project 2/Screenshot 2026-05-03 154514.png" alt="Po - moderna kopalnica" loading="lazy"><span class="ba-label ba-label-after">Po</span></div>
+          <div class="ps-item"><img src="/brand_assets/Project 2/Screenshot 2026-05-03 154451.png" alt="Tuš kabina" loading="lazy"></div>
+          <div class="ps-item"><img src="/brand_assets/Project 2/Screenshot 2026-05-03 154528.png" alt="Umivalnik" loading="lazy"></div>
+          <div class="ps-item"><img src="/brand_assets/Project 2/Screenshot 2026-05-03 154538.png" alt="LED ogledalo" loading="lazy"></div>
+        </div>
+        <div class="proj-desc">
+          <h3>Prenova kopalnice — Keramika, suhomontaža, sanitarije</h3>
+          <p>Stara kopalnica je šla ven, nova pa noter. Rušitev, hidroizolacija, nova keramika, pohištvo in LED ogledalo. Zdaj je kopalnica, ki je človek vesel vsako jutro.</p>
+        </div>
+      </div>
+
+      <!-- Project 3: Pool -->
+      <div class="proj-panel" id="proj-2" role="tabpanel">
+        <div class="photo-scroll">
+          <div class="ps-item"><img src="/brand_assets/Project3/Screenshot 2026-05-03 154558.png" alt="Pred - dotrajani bazen" loading="lazy"><span class="ba-label ba-label-before">Pred</span></div>
+          <div class="ps-item"><img src="/brand_assets/Project3/Screenshot 2026-05-03 154614.png" alt="Med prenovo" loading="lazy"></div>
+          <div class="ps-item"><img src="/brand_assets/Project3/Screenshot 2026-05-03 154622.png" alt="Polaganje mozaika" loading="lazy"></div>
+          <div class="ps-item"><img src="/brand_assets/Project3/Screenshot 2026-05-03 154627.png" alt="Dokončan bazen" loading="lazy"><span class="ba-label ba-label-after">Po</span></div>
+        </div>
+        <div class="proj-desc">
+          <h3>Prenova bazena — Mozaik keramika, hidroizolacija, les</h3>
+          <p>Bazen je bil v slabem stanju — danes zgleda kot iz hotela. Sanirali smo školjko, položili mozaik keramiko in obdali z leseno teraso. Stranka je bila prijetno presenečena.</p>
+        </div>
+      </div>
+
+      <!-- Project 4: Marble bathroom -->
+      <div class="proj-panel" id="proj-3" role="tabpanel">
+        <div class="photo-scroll">
+          <div class="ps-item"><img src="/brand_assets/Project 4/Screenshot 2026-05-03 154648.png" alt="Pred - surova kopalnica" loading="lazy"><span class="ba-label ba-label-before">Pred</span></div>
+          <div class="ps-item"><img src="/brand_assets/Project 4/Screenshot 2026-05-03 154717.png" alt="Po - marmorna kopalnica" loading="lazy"><span class="ba-label ba-label-after">Po</span></div>
+          <div class="ps-item"><img src="/brand_assets/Project 4/Screenshot 2026-05-03 154653.png" alt="Detajl 1" loading="lazy"></div>
+          <div class="ps-item"><img src="/brand_assets/Project 4/Screenshot 2026-05-03 154701.png" alt="Detajl 2" loading="lazy"></div>
+          <div class="ps-item"><img src="/brand_assets/Project 4/Screenshot 2026-05-03 154709.png" alt="Detajl 3" loading="lazy"></div>
+        </div>
+        <div class="proj-desc">
+          <h3>Nova kopalnica z marmorjem — Od betona do finega zaključka</h3>
+          <p>Gradnja od betonske plošče do gotove kopalnice. Izravnava, hidroizolacija, velikoformatne marmorne ploščice in vsa sanitarna oprema. Minimalistično, brez da bi zdrselo v banalnost.</p>
+        </div>
+      </div>
+
+      <!-- Project 5: Interior ceiling -->
+      <div class="proj-panel" id="proj-4" role="tabpanel">
+        <div class="photo-scroll">
+          <div class="ps-item"><img src="/brand_assets/Project 5/Screenshot 2026-05-03 154948.png" alt="Pred - surovo ostrešje" loading="lazy"><span class="ba-label ba-label-before">Pred</span></div>
+          <div class="ps-item"><img src="/brand_assets/Project 5/Screenshot 2026-05-03 155008.png" alt="Po - gladek strop z lučmi" loading="lazy"><span class="ba-label ba-label-after">Po</span></div>
+          <div class="ps-item"><img src="/brand_assets/Project 5/Screenshot 2026-05-03 154953.png" alt="Med izvedbo" loading="lazy"></div>
+          <div class="ps-item"><img src="/brand_assets/Project 5/Screenshot 2026-05-03 154957.png" alt="Zaključen prostor" loading="lazy"></div>
+        </div>
+        <div class="proj-desc">
+          <h3>Spuščeni strop in suhomontaža — Novogradnja</h3>
+          <p>Novogradnja je imela grob omet in vidne špirovce. Naredili smo spuščen strop z vgrajenimi lučmi, zgladili stene in predali prostor, ki je bil nared za pohištvo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE WORK + TRUST -->
+  <section id="o-nas" class="section" aria-labelledby="how-title">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;" class="how-grid">
+
+        <div class="reveal">
+          <div class="section-tag" aria-hidden="true">Kako delamo</div>
+          <h2 id="how-title">Kako to deluje</h2>
+          <p class="section-desc" style="margin-bottom:40px;">Brez presenečenj, brez zamud, brez skritih stroškov. Samo pošteno delo.</p>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-num" aria-hidden="true">1</div>
+              <div>
+                <h3>Brezplačen ogled</h3>
+                <p>Pokličete, pridemo, pogledamo. Brezplačno, brez obveznosti in brez da bi vam prodajali, kar ne potrebujete.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num" aria-hidden="true">2</div>
+              <div>
+                <h3>Pisna ponudba</h3>
+                <p>Dobite ponudbo z vsemi cenami in materialom. Brez malega tiska. Brez naknadno dodanih stroškov.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num" aria-hidden="true">3</div>
+              <div>
+                <h3>Delamo, ko smo rekli</h3>
+                <p>Pridemo na dogovorjen dan in delamo, dokler ni gotovo. Obveščamo vas sproti in ne skrivamo problemov pod preprogo.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num" aria-hidden="true">4</div>
+              <div>
+                <h3>Predamo in odidemo</h3>
+                <p>Ko je gotovo, si skupaj ogledamo. Ni nam všeč, da bi zapustili prostor, s katerim nekdo ni zadovoljen.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-2">
+          <div class="section-tag" aria-hidden="true">Zakaj mi</div>
+          <h2>Kakovost, ki jo čutite</h2>
+          <p class="section-desc" style="margin-bottom:32px;">Vsak projekt obravnavamo, kot da delamo v lastnem domu. To se pozna.</p>
+
+          <div class="trust-cards">
+            <div class="trust-card">
+              <div class="trust-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8E8" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div>
+                <h4>Stojimo za delom</h4>
+                <p>Niste zadovoljni? Pridemo in popravimo. Brez razprav, brez dodatnih stroškov.</p>
+              </div>
+            </div>
+
+            <div class="trust-card">
+              <div class="trust-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8E8" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <h4>Zamude nas motijo prav toliko kot vas</h4>
+                <p>Ko rečemo do petka — je do petka. Ni izgovorov, samo rezultati.</p>
+              </div>
+            </div>
+
+            <div class="trust-card">
+              <div class="trust-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8E8" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <h4>Kar zapišemo, je končna cena</h4>
+                <p>Nič ni "extra" in nič ni pozabljeno. Ponudba je ponudba — brez malega tiska.</p>
+              </div>
+            </div>
+
+            <div class="trust-card">
+              <div class="trust-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8E8" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              </div>
+              <div>
+                <h4>Vemo, kje so pasti</h4>
+                <p>Delamo to že leta. Poznamo tipične napake in vemo, kako se jim izogniti, preden postanejo vaš problem.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-tag" style="justify-content:center;" aria-hidden="true">Začnite danes</div>
+        <h2 id="cta-title">Čas je, da spremenite<br><span style="color:var(--cyan);">ta prostor</span></h2>
+        <p>Pokličite ali pišite — in v najkrajšem možnem času vam povemo, koliko bi stalo in kdaj bi lahko začeli.</p>
+
+        <div class="cta-actions">
+          <a href="tel:+38640874388" class="btn btn-primary" style="font-size:1rem;padding:17px 40px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:8px;" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-1.28a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            +386 40 874 388
+          </a>
+          <a href="#kontakt" class="btn btn-ghost" style="padding:16px 40px;">Pošljite sporočilo</a>
+        </div>
+        <p class="cta-note">Brezplačen ogled &nbsp;·&nbsp; Brez obveznosti &nbsp;·&nbsp; Odgovorimo hitro</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="kontakt" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="reveal">
+          <div class="section-tag" aria-hidden="true">Kontakt</div>
+          <h2 id="contact-title">Pogovorimo se</h2>
+          <p class="section-desc" style="margin-bottom:36px;">Raje kličete? Odlično. Raje pišete? Prav tako. Odgovorimo hitro, brez dolgih uvajanj.</p>
+
+          <div class="contact-info">
+            <div class="contact-row">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8E8" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.28-1.28a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="contact-row-label">Telefon</div>
+                <div class="contact-row-val"><a href="tel:+38640874388">+386 40 874 388</a></div>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8E8" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact-row-label">Območje delovanja</div>
+                <div class="contact-row-val" style="color:#eaeaea;">Celotna Slovenija</div>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C8E8" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <div class="contact-row-label">Odzivni čas</div>
+                <div class="contact-row-val" style="color:#eaeaea;">V roku 24 ur</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="company-badge">
+            <strong>MK Izdelava, Matic Košir s.p.</strong><br>
+            Zaključna dela v gradbeništvu &nbsp;·&nbsp; Slovenija<br>
+            Tel: <a href="tel:+38640874388" style="color:var(--cyan);text-decoration:none;">+386 40 874 388</a>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-2">
+          <form class="form-card" onsubmit="handleForm(event)" novalidate>
+            <h3>Povejte nam, kaj načrtujete</h3>
+
+            <div class="form-group">
+              <label class="form-label" for="f-name">Ime in priimek *</label>
+              <input type="text" id="f-name" class="form-control" placeholder="Janez Novak" required autocomplete="name">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="f-phone">Telefon *</label>
+              <input type="tel" id="f-phone" class="form-control" placeholder="+386 XX XXX XXX" required autocomplete="tel">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="f-service">Vrsta del</label>
+              <select id="f-service" class="form-control">
+                <option value="">Izberite storitev...</option>
+                <option value="suhomontaza">Suhomontažna dela</option>
+                <option value="stropi">Spuščeni stropi</option>
+                <option value="slikopleskarstvo">Slikopleskarstvo</option>
+                <option value="keramika">Keramika</option>
+                <option value="talne-obloge">Talne obloge</option>
+                <option value="prenova">Celovita prenova</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="f-msg">Sporočilo</label>
+              <textarea id="f-msg" class="form-control" placeholder="Opišite vaš projekt, lokacijo in željene storitve..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit" id="submit-btn">
+              Pošlji povpraševanje
+            </button>
+            <p class="form-note">Odgovorimo hitro · Brezplačen ogled brez obveznosti</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="/brand_assets/Logo.png" alt="MK Izdelava">
+        <div class="footer-sep" aria-hidden="true"></div>
+        <span class="footer-name">Matic Košir s.p.</span>
+      </div>
+
+      <nav class="footer-links" aria-label="Footer navigacija">
+        <a href="#storitve">Storitve</a>
+        <a href="#projekti">Projekti</a>
+        <a href="#o-nas">O nas</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+
+      <span class="footer-copy">© 2024 MK Izdelava · Vse pravice pridržane</span>
+    </div>
+  </footer>
+
+  <script>
+    // Project tab switcher
+    function showProj(i, btn) {
+      document.querySelectorAll('.proj-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.proj-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      document.getElementById('proj-' + i).classList.add('active');
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+    }
+
+    // Mobile nav
+    const hamburger = document.getElementById('hamburger-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    hamburger.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open);
+    });
+    function closeMobileNav() {
+      mobileNav.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+
+    // Scroll reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // How-we-work responsive grid
+    function checkHowGrid() {
+      const grid = document.querySelector('.how-grid');
+      if (!grid) return;
+      if (window.innerWidth < 900) {
+        grid.style.gridTemplateColumns = '1fr';
+        grid.style.gap = '48px';
+      } else {
+        grid.style.gridTemplateColumns = '1fr 1fr';
+        grid.style.gap = '72px';
+      }
+    }
+    checkHowGrid();
+    window.addEventListener('resize', checkHowGrid);
+
+    // Form submit
+    function handleForm(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      const name = document.getElementById('f-name').value.trim();
+      const phone = document.getElementById('f-phone').value.trim();
+      if (!name || !phone) {
+        btn.textContent = 'Prosimo izpolnite obvezna polja.';
+        btn.style.background = '#f59e0b';
+        setTimeout(() => { btn.textContent = 'Pošlji povpraševanje'; btn.style.background = ''; }, 2500);
+        return;
+      }
+      btn.textContent = 'Sporočilo poslano ✓';
+      btn.style.background = '#22c55e';
+      setTimeout(() => {
+        btn.textContent = 'Pošlji povpraševanje';
+        btn.style.background = '';
+        e.target.reset();
+      }, 3500);
+    }
+
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.style.background = window.scrollY > 40
+        ? 'rgba(8,11,13,0.96)'
+        : 'rgba(8,11,13,0.82)';
+    }, { passive: true });
+
+    // Drag-to-scroll for photo carousels
+    document.querySelectorAll('.photo-scroll').forEach(el => {
+      let isDown = false, startX = 0, scrollLeft = 0;
+      el.addEventListener('mousedown', e => {
+        isDown = true;
+        el.classList.add('grabbing');
+        startX = e.pageX - el.offsetLeft;
+        scrollLeft = el.scrollLeft;
+        e.preventDefault();
+      });
+      el.addEventListener('mouseleave', () => { isDown = false; el.classList.remove('grabbing'); });
+      el.addEventListener('mouseup', () => { isDown = false; el.classList.remove('grabbing'); });
+      el.addEventListener('mousemove', e => {
+        if (!isDown) return;
+        const x = e.pageX - el.offsetLeft;
+        el.scrollLeft = scrollLeft - (x - startX) * 1.4;
+      });
+    });
+
+  </script>
+</body>
+</html>
